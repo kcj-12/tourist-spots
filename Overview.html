@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Unlock the Beauty of the Philippines!</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="overview_style.css">
+	<title>Overview | Philippines</title>
+</head>
+<body>
+	<video id="video-background" preload="auto" autoplay="true" loop="loop" muted="muted">
+		<source src="philvid2.mp4" type="video/mp4">
+		<source src="video.webm" type="video/webm">
+	</video>
+	<div id="video-overlay"></div>
+	<div id="video-content">
+		<h1>Welcome to the Philippines!</h1>
+		<p>Experience the beauty of our country</p>
+	</div>
+	<div id="button-container">
+		<a href="start_up.html" id="button">Explore Now</a>
+	</div>
+
+	<script>
+		var video = document.getElementById("video-background");
+		var overlay = document.getElementById("video-overlay");
+		var content = document.getElementById("video-content");
+		var buttonContainer = document.getElementById("button-container");
+
+		video.addEventListener("ended", function() {
+			video.pause();
+			overlay.style.opacity = "0";
+			setTimeout(function() {
+				overlay.style.display = "none";
+				content.style.opacity = "0";
+				buttonContainer.style.opacity = "0";
+				setTimeout(function() {
+					content.style.display = "none";
+					buttonContainer.style.display = "none";
+				}, 1000);
+			}, 1000);
+			setTimeout(function() {
+				document.body.style.backgroundImage = "url('destination3.jpg')";
+				document.body.style.backgroundSize = "cover";
+				document.body.style.backgroundPosition = "center center";
+				document.body.style.backgroundColor = "#141414";
+			}, 2000);
+		});
+	</script>
+</body>
+</html>
